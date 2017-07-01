@@ -1,5 +1,3 @@
-USE FSA
-
 BEGIN TRY
 	DROP TABLE [dbo].[DimDate]
 END TRY
