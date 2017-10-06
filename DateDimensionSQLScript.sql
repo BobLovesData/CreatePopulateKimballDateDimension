@@ -1,10 +1,4 @@
-BEGIN TRY
-	DROP TABLE [dbo].[DimDate]
-END TRY
-
-BEGIN CATCH
-	/*No Action*/
-END CATCH
+DROP TABLE IF EXISTS [dbo].[DimDate]
 
 /**********************************************************************************/
 
@@ -54,7 +48,7 @@ GO
 --Value of Start Date Must be Less than Your End Date 
 
 DECLARE @StartDate DATETIME = '01/01/1900' --Starting value of Date Range
-DECLARE @EndDate DATETIME = '01/01/2100' --End Value of Date Range
+DECLARE @EndDate DATETIME = '12/31/2099' --End Value of Date Range
 
 --Temporary Variables To Hold the Values During Processing of Each Date of Year
 DECLARE
@@ -478,10 +472,10 @@ The following section needs to be populated for defining the fiscal calendar
 *******************************************************************************************************************************************************/
 
 DECLARE
-	@dtFiscalYearStart SMALLDATETIME = 'January 01, 1995',
-	@FiscalYear INT = 1995,
-	@LastYear INT = 2025,
-	@FirstLeapYearInPeriod INT = 1996
+	@dtFiscalYearStart SMALLDATETIME = 'January 01, 1900',
+	@FiscalYear INT = 1900,
+	@LastYear INT = 2099,
+	@FirstLeapYearInPeriod INT = 1904
 
 /*******************************************************************************************************************************************************/
 
